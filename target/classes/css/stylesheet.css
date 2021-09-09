@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+h2{
+	text-align: center;
+}
+
+.introduce{
+	margin-left: 100px;
+}
+
+main{
+	text-align: center;
+}
+
+.tryNumberMsg{
+	text-align: center;
+}
+
+.errorMsg{
+	text-align: center;
+}
+
+.hitblowMsg{
+	text-align: center;
+}
+
+.clearMsg{
+	color: red;
+}
+table{
+	margin-right: auto;
+	margin-left: auto;
+}

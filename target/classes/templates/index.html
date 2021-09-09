@@ -3,35 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <title>Hit & Blow</title>
+<link th:href="@{/css/stylesheet.css}" type="text/css" rel="stylesheet" />
+<script src="@{/js/jQuery.js}"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
 	<header>
 		<h2>Hit & Blow</h2>
-		<div>You hit three numbers.</div>
-		<div>One number is 1 to 5.</div>
-		<div>Three number is each different number.</div>
-		<div>"Hit" is "input number and answer number is equal and match
-			location."</div>
-		<div>"Blow" is "input number and answer number is only equal".</div>
-		<div>Three hit is goal.</div>
+		<div class="introduce">
+			<div>You hit three numbers.</div>
+			<div>One number is 1 to 5.</div>
+			<div>Three number is each different number.</div>
+			<div>"Hit" is "input number and answer number is equal and
+				match location."</div>
+			<div>"Blow" is "input number and answer number is only equal".</div>
+			<div>Three hit is goal.</div>
+		</div>
 	</header>
 	<main>
-		<form method="post" th:action="@{/answer}">
+		<form method="post" th:action="@{/try}">
 			<input type="number" min="1" max="5" name="num1"> <input
 				type="number" min="1" max="5" name="num2"> <input
 				type="number" min="1" max="5" name="num3"> <input
 				type="submit" name="try_button" value="Try!">
 		</form>
-		<div>Try numbers</div>
-		<div th:text="${errorMsg}"></div>
-		<div th:text="${hitblowMsg}"></div>
+		<h3 class="tryNumberMsg">Try numbers</h3>
+		<div th:text="${errorMsg}" class="errorMsg"></div>
+		<div th:text="${hitblowMsg}" class="hitblowMsg"></div>
 
 		<table>
 			<tr th:each="number:${numberList}">
 				<td th:text="${number}"></td>
 			</tr>
 		</table>
-		<div th:text="${clearMsg}"></div>
+		<h3 th:text="${clearMsg}" class="clearMsg"></h3>
 	</main>
 </body>
 </html>
